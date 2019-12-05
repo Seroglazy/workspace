@@ -1,13 +1,20 @@
 <?php
 
+
+if (file_exists(__DIR__ . '/../../autoload.php'))
+{include  __DIR__ . '/../../autoload.php';}
+else {
+    include __DIR__ . '/core/EquationInterface.php';
+    include __DIR__ . '/core/LogInterface.php';
+    include __DIR__ . '/core/LogAbstract.php';
+    include __DIR__ . '/vanuta/VanutaException.php';
+    include __DIR__ . '/vanuta/LinearEq.php';
+    include __DIR__ . '/vanuta/QuadraticEq.php';
+    include __DIR__ . '/vanuta/Log.php';
+}
+
 use vanuta\Log;
-include  __DIR__ . '/core/EquationInterface.php';
-include  __DIR__ . '/core/LogInterface.php';
-include  __DIR__ . '/core/LogAbstract.php';
-include  __DIR__ . '/vanuta/VanutaException.php';
-include  __DIR__ . '/vanuta/LinearEq.php';
-include  __DIR__ . '/vanuta/QuadraticEq.php';
-include  __DIR__ . '/vanuta/Log.php';
+use vanuta\VanutaException;
 
 
 function entercheck($num,$letter)
@@ -26,6 +33,8 @@ function entercheck($num,$letter)
     return;
 }
 
+
+$a=0;$b=0;$c=0;
 $a=entercheck($a,'a');
 $b=entercheck($b,'b');
 $c=entercheck($c,'c');
